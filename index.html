@@ -21,13 +21,79 @@
 
   <title>Masterclass de Trading GRATIS – HPC Institute</title>
 
-  <!-- Preconnect for Google Fonts -->
+  <!-- ============================================================
+       PERFORMANCE: Critical CSS inlined — paints H1 & header
+       instantly without waiting for styles.css to load.
+       Only above-the-fold styles are here; everything else is
+       in styles.css which loads asynchronously below.
+       ============================================================ -->
+  <style>
+    /* --- Reset --- */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:16px;font-weight:300;line-height:1.65;color:#fff;background:#162843;-webkit-font-smoothing:antialiased}
+    ul,ol{list-style:none}
+    a{color:inherit;text-decoration:none}
+
+    /* --- Layout --- */
+    .container{width:100%;max-width:680px;margin-inline:auto;padding-inline:18px}
+
+    /* --- Logo --- */
+    .logo{font-size:1.25rem;font-weight:600;letter-spacing:.04em}
+    .logo-hpc{color:#fff}
+    .logo-inst{color:#A8B8CC;font-weight:300}
+
+    /* --- Sticky Header --- */
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(14,12,12,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding-block:14px}
+
+    /* --- Outlined button (header only) --- */
+    .btn-outline{display:inline-flex;align-items:center;justify-content:center;font-family:inherit;font-weight:600;font-size:.875rem;letter-spacing:.04em;border-radius:8px;padding:10px 20px;cursor:pointer;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45);transition:transform .18s ease,border-color .18s ease}
+    .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+    /* --- Hero section --- */
+    .hero{background:#162843;background-image:radial-gradient(ellipse 80% 55% at 50% -5%,rgba(168,184,204,.1) 0%,transparent 65%),radial-gradient(ellipse 50% 35% at 0% 90%,rgba(14,22,38,.8) 0%,transparent 60%);padding:48px 0 56px}
+    .pill-badge{display:inline-block;background:rgba(168,184,204,.1);color:#A8B8CC;border:1px solid rgba(168,184,204,.3);border-radius:100px;font-size:.75rem;font-weight:600;letter-spacing:.1em;padding:6px 16px;margin-bottom:20px;text-transform:uppercase}
+    .hero h1{font-size:clamp(1.75rem,6.5vw,2.7rem);font-weight:600;line-height:1.15;letter-spacing:-.025em;color:#fff;margin-bottom:16px}
+    .highlight{color:#A8B8CC}
+    .hero-sub{font-size:1.05rem;font-weight:300;color:#C5CBD2;max-width:540px;margin-bottom:24px}
+
+    /* --- Trust badges (above fold) --- */
+    .trust-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+    .trust-badges li{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:100px;padding:7px 14px;font-size:.85rem;font-weight:600;color:#fff}
+  </style>
+
+  <!-- ============================================================
+       PERFORMANCE: Google Fonts loaded NON-BLOCKING
+       The media="print" trick: browser downloads in background,
+       then onload switches to media="all" — zero render blocking.
+       The <noscript> fallback ensures font loads without JS.
+       ============================================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Plus Jakarta Sans = closest Google Fonts match to Stolz (brand font). font-display:swap prevents render-blocking -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+    media="print"
+    onload="this.media='all'"
+  >
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap">
+  </noscript>
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- ============================================================
+       PERFORMANCE: Main stylesheet loaded NON-BLOCKING
+       Same media trick — downloads in background, never blocks
+       first paint. Critical styles above handle the initial render.
+       ============================================================ -->
+  <link
+    rel="stylesheet"
+    href="styles.css"
+    media="print"
+    onload="this.media='all'"
+  >
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="assets/favicon.webp">
