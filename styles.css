@@ -627,8 +627,96 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   PRINT
+   ACTIVECAMPAIGN FORM OVERRIDES
+   Neutraliza el estilo por defecto del embed y lo integra con
+   el diseño de la marca HPC.
    ============================================================ */
+._form_93,
+._form {
+  font-family: var(--font-base) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+._form_element {
+  margin-bottom: 14px !important;
+}
+
+._form-label,
+._form_element label {
+  font-family: var(--font-base) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  color: var(--text-sub-light) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+._field-wrapper input,
+._field-wrapper select,
+._form_element input,
+._form_element select {
+  font-family: var(--font-base) !important;
+  font-size: 0.95rem !important;
+  font-weight: 300 !important;
+  color: var(--clr-black) !important;
+  background: var(--clr-offwhite) !important;
+  border: 1.5px solid var(--clr-steel) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0 14px !important;
+  height: 48px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+  box-shadow: none !important;
+}
+
+._field-wrapper input:focus,
+._form_element input:focus,
+._form_element select:focus {
+  outline: none !important;
+  border-color: var(--clr-navy) !important;
+  box-shadow: 0 0 0 3px rgba(22, 40, 67, 0.12) !important;
+  background: var(--clr-white) !important;
+}
+
+/* Botón CTA del formulario AC */
+._form_submit,
+._submit {
+  font-family: var(--font-base) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  background: var(--clr-navy) !important;
+  color: var(--clr-white) !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+  width: 100% !important;
+  height: 52px !important;
+  cursor: pointer !important;
+  transition: background 0.18s ease, transform 0.18s ease !important;
+  box-shadow: 0 4px 20px rgba(22, 40, 67, 0.45) !important;
+  text-transform: uppercase !important;
+}
+
+._form_submit:hover,
+._submit:hover {
+  background: var(--clr-dark) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Ocultar branding AC si aparece */
+._form-thank-you { text-align: center; color: var(--clr-navy); font-weight: 600; padding: 20px 0; }
+._error-inner, ._error-html, ._error-arrow { font-family: var(--font-base) !important; }
+
+
 @media print {
   .site-header, .btn, .form-card { display: none; }
 }
